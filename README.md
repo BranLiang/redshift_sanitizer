@@ -1,8 +1,6 @@
 # RedshiftSanitizer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/redshift_sanitizer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Kill redshift load errors with this helper gem. Stop worry about redshift string anymore.
 
 ## Installation
 
@@ -12,17 +10,28 @@ Add this line to your application's Gemfile:
 gem 'redshift_sanitizer'
 ```
 
-And then execute:
+Config your setting, default settings are as follows
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install redshift_sanitizer
+```ruby
+RedshiftSanitizer.configure do |config|
+  config.delimeter = "^"
+  config.replace = ""
+  config.eof = "\n"
+end
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Clean your target string
+
+```ruby
+RedshiftSanitizer.clean(YOUR_STRING)
+```
+
+## Best Practices
+
+1. use `ESCAPE`
+2. use `NULL AS '\000'`
 
 ## Development
 
