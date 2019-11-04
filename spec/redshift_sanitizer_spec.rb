@@ -50,12 +50,12 @@ RSpec.describe RedshiftSanitizer do
 
   it "remove single start character" do
     char_with_valid_quotes = "'Hello world'"
-    expect(RedshiftSanitizer.clean(char_with_valid_quotes)).to eq("'Hello world'")
+    expect(RedshiftSanitizer.clean(char_with_valid_quotes)).to eq("Hello world")
 
     char_with_invalid_quotes_1 = "'Hello world"
     expect(RedshiftSanitizer.clean(char_with_invalid_quotes_1)).to eq("Hello world")
 
-    char_with_invalid_quotes_2 = "\"Hello world"
+    char_with_invalid_quotes_2 = "\"Hello world'''''"
     expect(RedshiftSanitizer.clean(char_with_invalid_quotes_2)).to eq("Hello world")
   end
 end

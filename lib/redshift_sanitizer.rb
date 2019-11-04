@@ -39,10 +39,9 @@ module RedshiftSanitizer
                .gsub("\0", configuration.replace)
                .gsub("\x00", configuration.replace)
 
-    # No single start quote
-    if text[0] != text[-1] && (text[0] == "\"" || text[0] == "'")
-      text[0] = ''
-    end
+    # No surrounding quote
+    text = text.gsub(/^(\"|\')+/, '')
+               .gsub(/(\"|\')+$/, '')
 
     text
   end
