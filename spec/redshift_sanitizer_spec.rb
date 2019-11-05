@@ -44,7 +44,7 @@ RSpec.describe RedshiftSanitizer do
   end
 
   it "remove null character" do
-    char_with_null = "hello\0world\zhey\u0000no\x00way"
+    char_with_null = "hello\0worldhey\u0000no\x00way"
     expect(RedshiftSanitizer.clean(char_with_null)).to eq("helloworldheynoway")
   end
 

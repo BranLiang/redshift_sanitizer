@@ -35,9 +35,6 @@ module RedshiftSanitizer
 
     # Remove nulls
     text = text.gsub("\u0000", configuration.replace)
-               .gsub("\z", configuration.replace)
-               .gsub("\0", configuration.replace)
-               .gsub("\x00", configuration.replace)
 
     # No surrounding quote
     text = text.gsub(/^(\"|\')+/, '')

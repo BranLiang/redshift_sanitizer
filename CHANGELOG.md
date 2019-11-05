@@ -9,3 +9,7 @@
 ## [0.1.1] - 2019-11-04
 
 - Update quote sanitizer, remove both start and end quotes
+
+## [0.1.2] - 2019-11-05
+
+- Only remove \u0000, rather all possible null characters

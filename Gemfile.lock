@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    redshift_sanitizer (0.1.0)
+    redshift_sanitizer (0.1.2)
 
 GEM
   remote: https://rubygems.org/
