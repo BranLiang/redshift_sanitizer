@@ -58,4 +58,9 @@ RSpec.describe RedshiftSanitizer do
     char_with_invalid_quotes_2 = "\"Hello world'''''"
     expect(RedshiftSanitizer.clean(char_with_invalid_quotes_2)).to eq("Hello world")
   end
+
+  it "encode chinese correctly" do
+    char_with_chinese = "你好"
+    expect(RedshiftSanitizer.clean(char_with_chinese)).to eq("你好")
+  end
 end
