@@ -25,7 +25,7 @@ module RedshiftSanitizer
     end
 
     # Remove invalid UTF-8 character
-    text = text.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: configuration.replace)
+    text = text.encode('UTF-8', invalid: :replace, undef: :replace, replace: configuration.replace)
 
     # Remove delimeter
     text = text.gsub(configuration.delimeter, configuration.replace)

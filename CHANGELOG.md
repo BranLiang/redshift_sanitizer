@@ -13,3 +13,7 @@
 ## [0.1.2] - 2019-11-05
 
 - Only remove \u0000, rather all possible null characters
+
+## [0.1.3] - 2020-01-03
+
+- Fix the chinese character encode bug
