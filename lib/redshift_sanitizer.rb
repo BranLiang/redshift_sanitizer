@@ -37,8 +37,7 @@ module RedshiftSanitizer
     text = text.gsub("\u0000", configuration.replace)
 
     # No surrounding quote
-    text = text.gsub(/^(\"|\')+/, '')
-               .gsub(/(\"|\')+$/, '')
+    text = text.gsub(/(\"|\')/, '')
 
     text
   end
